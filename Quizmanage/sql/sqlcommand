@@ -1,0 +1,32 @@
+CREATE TABLE question(
+q_id INT auto_increment primary key,
+difficulty VARCHAR(250) NOT NULL,
+questions varchar (20)NOT NULL,
+topics varchar(30),
+q_mcq varchar(30)
+) ;
+select*from answers;
+insert into table name values()
+nsert into QUESTION( questions, topics,difficulty) values ('What is Java?', 'Java Basics', 1);
+
+insert into QUESTION( questions, topics,difficulty) values ('Which class does not override the equals() and hashCode() methods, inheriting them directly from class Object?', 'Objects and Collections', 3);
+
+select * from QUESTION;
+
+
+insert into MCQ_CHOICE( choice,ques_id) values ('method',2);
+insert into MCQ_CHOICE( choice,ques_id) values ('native',2);
+insert into MCQ_CHOICE( choice,ques_id) values ('array',2);
+insert into MCQ_CHOICE( choice,ques_id) values ('sub classes',2);
+
+select * from QUESTION;
+select * from MCQ_CHOICE;
+select * from ANSWER;
+
+insert into ANSWER( actual_ans,user_ans,ques_id,mcq_id) values ('native',' ',2,2);
+CREATE TABLE MCQ_CHOICE(
+mcq_id INT auto_increment primary key,
+choice VARCHAR(250) NOT NULL,
+ques_id int  NOT NULL,
+FOREIGN KEY(ques_id)    REFERENCES QUESTION(ques_id)
+) ;
